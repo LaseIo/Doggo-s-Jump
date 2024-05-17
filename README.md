@@ -1,4 +1,4 @@
-Le 15 mars 2009, Doodle jump
+Dans Doggo's Jump, vous controllez Doggo, et essayer d'atteindre le point le plus haut de Celestia pour atteindre 
 
 
 projet doggo's jump:

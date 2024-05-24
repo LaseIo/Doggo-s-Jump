@@ -1,4 +1,4 @@
-Dans Doggo's Jump, vous controllez Doggo, et essayer d'atteindre le point le plus haut de Celestia, c'est un jeu multi-joueurs dans lequel les 2 joueurs essaient d'obtenir un score plus élevé que l'autre sans tomber des plateformes.
+Dans Doggo's Jump, vous controllez Doggo, et essayer d'atteindre le point le plus haut de Celestia, c'est un jeu solo mais le jeu possède un système de classement partagé entre plusieurs joueurs qui pourront donc essayer d'obtenir le meilleur score en atteignant le point le plus haut possible.
 
 controles :
 flèches directionelles
@@ -12,3 +12,4 @@ projet doggo's jump fonctionnalités:
 -géneration procédurale des plateformes
 -(differentes plateformes)
 -scrolling automatique
+-classement

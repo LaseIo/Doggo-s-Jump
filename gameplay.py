@@ -149,7 +149,7 @@ def gameplay() :
 
     # Création de la fenêtre Tkinter
     global root
-    root = ttk()
+    root = Tk()
     root.configure(bg="sky blue") 
     root.attributes('-fullscreen', True)
     root.bind_all('<KeyPress>', press)
@@ -206,3 +206,4 @@ def gameplay() :
 
     # Affiche le temps écoulé entre le début et la fin du programme
     fin = time.time()
+gameplay()

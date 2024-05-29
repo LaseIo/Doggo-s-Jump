@@ -38,10 +38,11 @@ y0=0
 yc=0  
 create_platform(yc)
 print(game_platforms)
+
 # Début de la boucle de jeu
-while game_keys["space"]!=True:
+while game_keys["space"]!=True  :
     # Actualisation des coordonées
-    xt=x(xt,6)
+    xt=x(xt,10)
     yt,ty,dydt,obstacle_inf,y0=y(xt,yt,obstacle_inf,t=ty,y0=y0)
     # Affichage des coordonnées
     texte = xt,yt
@@ -52,12 +53,25 @@ while game_keys["space"]!=True:
     mon_image = PhotoImage(file=os.path.join(current_directory, "images", "doggo_sprite.png"))
     personnage = Label(image=mon_image,bg="sky blue")
     personnage.image=mon_image
-    personnage.place(x=xt,y=770-yt)
+    personnage.place(x=xt,y=500)
+    # Placement des plateformes
+    n = 0
+    platform_showed = []
+    for i in game_platforms:
+        mon_image = PhotoImage(file=os.path.join(current_directory, "images", "platform_sprite.png"))
+        platform_showed.append(n)
+        platform_showed[n] = Label(image=mon_image,bg="sky blue")
+        platform_showed[n].image=mon_image
+        platform_showed[n].place(x=i[0],y=i[1]+yt)
+        n += 1
+
     # Actualisation de la page
     root.update()
     label.pack_forget()
+    for i in platform_showed :
+        i.destroy()
     personnage.destroy()
-
+    platform_destroy(yt,platform_showed)
 # Fin de la boucle de jeu et fermeture de la page
 root.destroy()
 root.mainloop()

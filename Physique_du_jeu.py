@@ -25,7 +25,7 @@ def y(x,y,obstacle_inf=0,obstacle_sup=0,t=0,y0=0,g=5):
     obstacle_inf,y0 = platform_inf(x,y,dydt,y0,obstacle_inf)
     # Réactive la gravité s'il n'y a pas de sol ou s'il y a saut
     if obstacle_inf == 0 or game_keys["Up"]*ready(obstacle_inf) == 1 :
-        time.sleep(1/60)
+        time.sleep(1/240)
         t+=1
     else :
         t=0

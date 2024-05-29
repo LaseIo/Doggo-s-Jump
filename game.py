@@ -57,12 +57,12 @@ def display_scores_in_menu(frame):
     scores = get_scores()
     scores = sorted(scores, key=lambda x: int(x[2]), reverse=True)
     
-    scores_label = Label(frame, text="Classement des scores :", font=("Papyrus", 20), bg='#93bfe6')
+    scores_label = Label(frame, text="Podium :", font=("Papyrus", 35), bg='#fe6c90')
     scores_label.pack(pady=10)
     
     for row in scores:
         score_text = f"Username: {row[1]}, Score: {row[2]}"
-        score_label = Label(frame, text=score_text, font=("Papyrus", 15), bg='#93bfe6')
+        score_label = Label(frame, text=score_text, font=("Papyrus", 18), bg='#fe6c90')
         score_label.pack()
 
 def menu():
@@ -92,8 +92,8 @@ def menu():
     bouton_2 = Button(root, text='Fermer le jeu', image=bouton_quitter, command=root.destroy, borderwidth=0, highlightthickness=0, relief='flat')
     bouton_2.place(relx=0.475, rely=0.87)
 
-    scores_frame = Frame(root, bg='#93bfe6')
-    scores_frame.place(relx=0.3, rely=0.5, relwidth=0.4, relheight=0.3)
+    scores_frame = Frame(root, bg='#fe6c90')
+    scores_frame.place(relx=0.3, rely=0.5, relwidth=0.4, relheight=0.25)
     display_scores_in_menu(scores_frame)
 
     root.mainloop()
@@ -140,7 +140,7 @@ def game():
 
     def register():
         contenu = name.get()
-        add_score(contenu, 69)  # Remplacer 69 par le score réel du joueur
+        add_score(contenu, 75)  # Remplacer 69 par le score réel du joueur
     
     name = Entry(root_game)
     name.place(relx=0.48, rely=0.55)

@@ -173,8 +173,9 @@ def gameplay() :
     print(game_platforms)
 
     # Début de la boucle de jeu
-    while game_keys["space"] != True:
-        # Actualisation des coordonnées
+    #while game_keys["space"] != True:
+    while yt >= y0-1000 :
+        # Actalisation des coordonnées
         xt = x(xt, 10)
         yt, ty, dydt, obstacle_inf, y0 = y(xt, yt, obstacle_inf, t=ty, y0=y0)
         # Affichage des coordonnées
@@ -323,7 +324,7 @@ def game():
     bouton_1 = Button(root_game, image=bouton_quitter, text='Ragequit', command=root_game.destroy, borderwidth=0, highlightthickness=0, relief='flat')
     bouton_1.place(relx=0.47, rely=0.82)
 
-    score = Label(root_game, text='Votre score : ', font=('Papyrus', 30), bg='#fe6c90')
+    score = Label(root_game, text='Votre score : ' +str(y0), font=('Papyrus', 30), bg='#fe6c90')
     score.place(relx=0.39, rely=0.45)
 
     def sarcozy():

@@ -173,8 +173,9 @@ def gameplay() :
     print(game_platforms)
 
     # Début de la boucle de jeu
-    while game_keys["space"] != True:
-        # Actualisation des coordonnées
+    #while game_keys["space"] != True:
+    while yt >= y0-1000 :
+        # Actalisation des coordonnées
         xt = x(xt, 10)
         yt, ty, dydt, obstacle_inf, y0 = y(xt, yt, obstacle_inf, t=ty, y0=y0)
         # Affichage des coordonnées
@@ -323,7 +324,7 @@ def game():
     bouton_1 = Button(root_game, image=bouton_quitter, text='Ragequit', command=root_game.destroy, borderwidth=0, highlightthickness=0, relief='flat')
     bouton_1.place(relx=0.47, rely=0.82)
 
-    score = Label(root_game, text='Votre score : ', font=('Papyrus', 30), bg='#fe6c90')
+    score = Label(root_game, text='Votre score : ' +str(y0), font=('Papyrus', 30), bg='#fe6c90')
     score.place(relx=0.39, rely=0.45)
 
     def sarcozy():
@@ -336,13 +337,16 @@ def game():
 
     def register():
         contenu = name.get()
-        add_score(contenu, y0)  # Remplacer 69 par le score réel du joueur ///// news fait en ajoutant un global y0 (voir ctrl+F)
-                         
+        add_score(contenu, y0)
+
+    username = Label(root_game, text='Votre nom : ', font=('Papyrus', 14), bg='#fe6c90')
+    username.place(relx=0.42, rely=0.545)
+                      
     name = Entry(root_game)
     name.place(relx=0.48, rely=0.55)
     
     enregistrer = Button(root_game, text='Enregistrer', command=register)
-    enregistrer.place(relx=0.3, rely=0.5)
+    enregistrer.place(relx=0.55, rely=0.55)
     root_game.mainloop()
 
 menu()
